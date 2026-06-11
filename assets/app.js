@@ -116,7 +116,7 @@
     document.querySelectorAll("[data-i18n]").forEach(function (el) {
       var key = el.getAttribute("data-i18n");
       if (!(key in enCache)) enCache[key] = el.innerHTML;
-      el.innerHTML = (lang !== "en" && DICT[lang] && DICT[lang][key] != null)
+      el.innerHTML = (DICT[lang] && DICT[lang][key] != null)
         ? DICT[lang][key] : enCache[key];
     });
 
@@ -126,7 +126,7 @@
         var ck = "@" + attr + ":" + key;
         if (!(ck in enCache)) enCache[ck] = el.getAttribute(attr) || "";
         el.setAttribute(attr,
-          (lang !== "en" && DICT[lang] && DICT[lang][key] != null)
+          (DICT[lang] && DICT[lang][key] != null)
             ? DICT[lang][key] : enCache[ck]);
       });
     });

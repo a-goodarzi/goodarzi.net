@@ -3,6 +3,30 @@
    ========================================================= */
 
 window.I18N = {
+  en: {
+    /* shared */
+    "nav.about": "About", "nav.writing": "Writing", "nav.connect": "Connect",
+    "role": "Senior DevOps Engineer",
+    "split.read": "Read profile",
+    "split.amir.line": "Platform reliability, Kubernetes, and developer experience.",
+    "split.hamid.line": "Cloud automation, observability, and secure delivery.",
+    "cta.linkedin": "Connect on LinkedIn", "cta.email": "Email me",
+    "fact.role.k": "Role", "fact.focus.k": "Focus",
+    "fact.based.k": "Based", "fact.based.v": "Berlin · CET/CEST",
+    "fact.exp.k": "Experience", "fact.exp.v": "8+ years in production",
+    "writing.title": "Latest from the blog", "writing.subscribe": "Subscribe via RSS",
+    "writing.viewall": "All posts on the blog", "feed.more": "Show earlier posts",
+    "foot.copy": "© 2026 Goodarzi. Built with care.", "theme.toggle": "Toggle dark mode",
+
+    /* amir */
+    "amir.lead": "I build platforms teams trust — resilient Kubernetes infrastructure, calm on-call, and developer experience that gets out of the way.",
+    "amir.fact.focus.v": "Platform · SRE · DX",
+
+    /* hamid */
+    "hamid.lead": "I help teams ship to the cloud with confidence — automated infrastructure, deep observability, and security baked in from the first commit.",
+    "hamid.fact.focus.v": "Cloud · Automation · Security"
+  },
+
   fa: {
     /* shared */
     "nav.about": "درباره", "nav.writing": "نوشته‌ها", "nav.connect": "ارتباط",
@@ -12,7 +36,7 @@ window.I18N = {
     "split.hamid.line": "خودکارسازی ابری، رصدپذیری و تحویل امن.",
     "cta.linkedin": "ارتباط در لینکدین", "cta.email": "ایمیل به من",
     "fact.role.k": "نقش", "fact.focus.k": "تمرکز",
-    "fact.based.k": "موقعیت", "fact.based.v": "دورکار · CET",
+    "fact.based.k": "موقعیت", "fact.based.v": "‌برلین · CET/CEST2",
     "fact.exp.k": "تجربه", "fact.exp.v": "بیش از ۸ سال در محیط تولید",
     "writing.title": "تازه‌ترین نوشته‌های وبلاگ", "writing.subscribe": "اشتراک با RSS",
     "writing.viewall": "همهٔ نوشته‌ها در وبلاگ", "feed.more": "نمایش نوشته‌های پیشین",
