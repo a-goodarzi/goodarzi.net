@@ -31,6 +31,7 @@
       I.fa[who + ".name"]       = p.nameFa;
       I.fa[who + ".panel.name"] = nameWithBreak(p.nameFa);
       I.fa[who + ".ghost"]      = p.ghostFa;
+      I.fa[who + ".nick"]       = p.nickFa;
     });
 
     /* Set EN text and stamp data-i18n so translateDOM can swap to FA/DE */
@@ -51,6 +52,12 @@
       if (!p) return;
       el.textContent = p.ghostEn;
       el.setAttribute("data-i18n", who + ".ghost");
+    });
+    document.querySelectorAll("[data-cfg-nick]").forEach(function (el) {
+      var who = el.getAttribute("data-cfg-nick"), p = cfg[who];
+      if (!p) return;
+      el.textContent = p.nickEn;
+      el.setAttribute("data-i18n", who + ".nick");
     });
 
     /* LinkedIn hrefs */
