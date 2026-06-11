@@ -16,15 +16,34 @@ window.I18N = {
     "fact.exp.k": "Experience", "fact.exp.v": "8+ years in production",
     "writing.title": "Latest from the blog", "writing.subscribe": "Subscribe via RSS",
     "writing.viewall": "All posts on the blog", "feed.more": "Show earlier posts",
+    "connect.title": "Let's talk about infrastructure.",
+    "connect.note": "Three ways to reach my inbox — pick whichever you prefer. The address is assembled in your browser and never exposed as plain text to scrapers.",
+    "email.reveal.label": "01 · Reveal", "email.reveal.desc": "Hidden from bots until you ask. Click to show the address.", "email.reveal.btn": "Show email",
+    "email.copy.label": "02 · Copy", "email.copy.desc": "One tap copies the address straight to your clipboard.", "email.copy.btn": "Copy email", "email.copied": "Copied ✓",
+    "email.mailto.label": "03 · Compose", "email.mailto.desc": "Opens a new message with a subject line pre-filled.", "email.mailto.btn": "Compose message",
     "foot.copy": "© 2026 Goodarzi. Built with care.", "theme.toggle": "Toggle dark mode",
 
     /* amir */
     "amir.lead": "I build platforms teams trust — resilient Kubernetes infrastructure, calm on-call, and developer experience that gets out of the way.",
     "amir.fact.focus.v": "Platform · SRE · DX",
+    "amir.about.title": "Reliability is a feature.",
+    "amir.about.p1": "For nearly a decade I've helped engineering teams ship faster <strong>without sacrificing their sleep</strong>. My work sits where infrastructure meets people: the platforms, pipelines and guardrails that let developers move fast and safe.",
+    "amir.about.p2": "I care about systems that degrade gracefully, incidents that resolve quickly, and tools that fade into the background. Good DevOps is mostly empathy, with a terminal open.",
+    "amir.spec1.t": "Platform & Reliability", "amir.spec1.p": "Resilient Kubernetes platforms and SLOs that hold up under real load.",
+    "amir.spec2.t": "CI/CD & Delivery", "amir.spec2.p": "Fast, safe pipelines with progressive delivery and automatic rollbacks.",
+    "amir.spec3.t": "Observability", "amir.spec3.p": "Metrics, traces and logs that turn incidents into fast answers.",
+    "amir.spec4.t": "Developer Experience", "amir.spec4.p": "Golden paths and internal tools that make the right thing the easy thing.",
 
     /* hamid */
     "hamid.lead": "I help teams ship to the cloud with confidence — automated infrastructure, deep observability, and security baked in from the first commit.",
-    "hamid.fact.focus.v": "Cloud · Automation · Security"
+    "hamid.fact.focus.v": "Cloud · Automation · Security",
+    "hamid.about.title": "Secure by default.",
+    "hamid.about.p1": "I've spent years turning fragile, hand-built environments into <strong>infrastructure you can describe, review and rebuild from scratch</strong>. My focus: automation that removes toil, and security that doesn't slow anyone down.",
+    "hamid.about.p2": "The most secure systems are the ones that are easy to understand. I bring observability and policy together so teams can move fast — and still sleep at night.",
+    "hamid.spec1.t": "Cloud Automation", "hamid.spec1.p": "Infrastructure as code that provisions entire environments in minutes, not weeks.",
+    "hamid.spec2.t": "Secure Delivery", "hamid.spec2.p": "Supply-chain security, secrets management and policy as code, baked into the pipeline.",
+    "hamid.spec3.t": "Observability", "hamid.spec3.p": "End-to-end visibility with metrics, traces and alerts that actually mean something.",
+    "hamid.spec4.t": "Infrastructure as Code", "hamid.spec4.p": "Reproducible, reviewable infrastructure that every team member can safely change."
   },
 
   fa: {
@@ -45,7 +64,7 @@ window.I18N = {
     "email.reveal.label": "۰۱ · نمایش", "email.reveal.desc": "تا زمانی که نخواهید از ربات‌ها پنهان می‌ماند. برای نمایش نشانی کلیک کنید.", "email.reveal.btn": "نمایش ایمیل",
     "email.copy.label": "۰۲ · کپی", "email.copy.desc": "با یک کلیک نشانی را در حافظه کپی کنید.", "email.copy.btn": "کپی ایمیل", "email.copied": "کپی شد ✓",
     "email.mailto.label": "۰۳ · نوشتن", "email.mailto.desc": "یک پیام تازه با موضوع از پیش‌پرشده باز کنید.", "email.mailto.btn": "نوشتن پیام",
-    "foot.copy": "© ۲۰۲۶ گودرزی. ساخته‌شده با دقت.", "theme.toggle": "تغییر حالت تیره/روشن",
+    "foot.copy": "© ۲۰۲۶ گودرزی. ساخته‌شده .", "theme.toggle": "تغییر حالت تیره/روشن",
 
     /* amir */
     "amir.lead": "پلتفرم‌هایی می‌سازم که تیم‌ها به آن‌ها اعتماد می‌کنند — زیرساخت پایدار Kubernetes، کشیک آرام، و تجربهٔ توسعه‌دهنده‌ای که سر راه نیست.",
