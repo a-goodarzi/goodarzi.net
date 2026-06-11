@@ -33,18 +33,24 @@
       I.fa[who + ".ghost"]      = p.ghostFa;
     });
 
-    /* Set EN name text directly so the i18n cache captures it */
+    /* Set EN text and stamp data-i18n so translateDOM can swap to FA/DE */
     document.querySelectorAll("[data-cfg-name]").forEach(function (el) {
-      var p = cfg[el.getAttribute("data-cfg-name")];
-      if (p) el.textContent = p.nameEn;
+      var who = el.getAttribute("data-cfg-name"), p = cfg[who];
+      if (!p) return;
+      el.textContent = p.nameEn;
+      el.setAttribute("data-i18n", who + ".name");
     });
     document.querySelectorAll("[data-cfg-panel-name]").forEach(function (el) {
-      var p = cfg[el.getAttribute("data-cfg-panel-name")];
-      if (p) el.innerHTML = nameWithBreak(p.nameEn);
+      var who = el.getAttribute("data-cfg-panel-name"), p = cfg[who];
+      if (!p) return;
+      el.innerHTML = nameWithBreak(p.nameEn);
+      el.setAttribute("data-i18n", who + ".panel.name");
     });
     document.querySelectorAll("[data-cfg-ghost]").forEach(function (el) {
-      var p = cfg[el.getAttribute("data-cfg-ghost")];
-      if (p) el.textContent = p.ghostEn;
+      var who = el.getAttribute("data-cfg-ghost"), p = cfg[who];
+      if (!p) return;
+      el.textContent = p.ghostEn;
+      el.setAttribute("data-i18n", who + ".ghost");
     });
 
     /* LinkedIn hrefs */
