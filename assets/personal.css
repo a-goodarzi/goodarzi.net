@@ -42,7 +42,7 @@
 .facts .f { padding: 20px 0; border-inline-start: 1px solid var(--line); padding-inline-start: 22px; }
 .facts .f:first-child { border-inline-start: 0; padding-inline-start: 0; }
 .facts .fk { font-family: var(--mono); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-faint); }
-[dir="rtl"] .facts .fk { letter-spacing: 0; }
+[dir="rtl"] .facts .fk { letter-spacing: 0; font-family: var(--sans); }
 .facts .fv { margin-top: 7px; font-size: 15px; color: var(--ink); }
 .facts .fv .dotmark { color: var(--accent); }
 
