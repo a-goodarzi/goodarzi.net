@@ -34,9 +34,8 @@
 [dir="rtl"] {
   --serif: "Vazirmatn", "Spectral", serif;
   --sans:  "Vazirmatn", "Hanken Grotesk", sans-serif;
+  --mono:  "Vazirmatn", "JetBrains Mono", monospace;
 }
-[dir="rtl"] .mono-kicker,
-[dir="rtl"] .wordmark { font-family: var(--mono); }
 
 /* ============ DARK THEME ============ */
 :root[data-theme="dark"] {
