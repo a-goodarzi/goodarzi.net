@@ -173,10 +173,6 @@
                 <svg class="ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 110-4.13 2.07 2.07 0 010 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
                 <span data-i18n="cta.linkedin">Connect on LinkedIn</span>
               </a>
-              <span class="hero-email">
-                <button class="btn ghost" data-email-reveal data-obf data-cfg-email="amir"><span data-i18n="cta.email">Email me</span></button>
-                <span data-email-out hidden></span>
-              </span>
             </div>
           </div>
           <div class="hero-side">
@@ -209,6 +205,51 @@
         <div class="feed" data-feed="amir" data-reveal aria-label="Latest blog posts by Amir"></div>
         <a class="viewall" data-cfg-viewall="amir" href="#" target="_blank" rel="noopener"><span data-i18n="writing.viewall">All posts on the blog</span><span class="arrow" aria-hidden="true">→</span></a>
       </div>
+
+      <div class="section cv-request">
+        <div class="cv-grid" data-reveal>
+          <div class="cv-intro">
+            <span class="mono-kicker"><span class="num">02</span><span data-i18n="form.kicker">Get in touch</span></span>
+            <h3 class="section-title" data-i18n="form.title">Send me a message</h3>
+            <p class="cv-desc" data-i18n="form.desc">A question, a note, or a CV request — pick the type and I'll get back to you.</p>
+          </div>
+          <form class="cv-form" data-merged-form="amir" data-cfg-form-subjects="amir" novalidate>
+            <input type="hidden" name="access_key" data-cfg-web3forms="amir" value="">
+            <input type="hidden" name="subject" value="">
+            <input type="checkbox" name="botcheck" class="cv-botcheck" tabindex="-1" autocomplete="off">
+            <div class="form-type" role="group">
+              <button type="button" class="form-type-btn" data-form-type="message" aria-pressed="true" data-i18n="form.type.message">Message</button>
+              <button type="button" class="form-type-btn" data-form-type="cv" aria-pressed="false" data-i18n="form.type.cv">CV Request</button>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="amir-f-name" data-i18n="form.name">Your name</label>
+              <input class="form-input" id="amir-f-name" name="name" type="text" required
+                data-i18n-attr="placeholder:form.name.ph">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="amir-f-email" data-i18n="form.email">Your email</label>
+              <input class="form-input" id="amir-f-email" name="email" type="email" required
+                data-i18n-attr="placeholder:form.email.ph">
+            </div>
+            <div class="form-group">
+              <label class="form-label form-msg-label" for="amir-f-msg">Your message</label>
+              <textarea class="form-input form-textarea" id="amir-f-msg" name="message" rows="4" required></textarea>
+            </div>
+            <div class="form-footer">
+              <button class="btn accent" type="submit">
+                <span class="form-btn-label" data-i18n="form.submit">Send</span>
+              </button>
+              <p class="form-note" data-i18n="form.note">I reply to every message personally.</p>
+            </div>
+            <div class="form-feedback form-success" hidden aria-live="polite">
+              <span data-i18n="form.success">Sent — I'll get back to you shortly.</span>
+            </div>
+            <div class="form-feedback form-error" hidden aria-live="polite">
+              <span data-i18n="form.error">Something went wrong. Please try again.</span>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -226,10 +267,6 @@
                 <svg class="ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 110-4.13 2.07 2.07 0 010 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
                 <span data-i18n="cta.linkedin">Connect on LinkedIn</span>
               </a>
-              <span class="hero-email">
-                <button class="btn ghost" data-email-reveal data-obf data-cfg-email="hamid"><span data-i18n="cta.email">Email me</span></button>
-                <span data-email-out hidden></span>
-              </span>
             </div>
           </div>
           <div class="hero-side">
@@ -261,6 +298,51 @@
         </div>
         <div class="feed" data-feed="hamid" data-reveal aria-label="Latest blog posts by Hamid"></div>
         <a class="viewall" data-cfg-viewall="hamid" href="#" target="_blank" rel="noopener"><span data-i18n="writing.viewall">All posts on the blog</span><span class="arrow" aria-hidden="true">→</span></a>
+      </div>
+
+      <div class="section cv-request">
+        <div class="cv-grid" data-reveal>
+          <div class="cv-intro">
+            <span class="mono-kicker"><span class="num">02</span><span data-i18n="form.kicker">Get in touch</span></span>
+            <h3 class="section-title" data-i18n="form.title">Send me a message</h3>
+            <p class="cv-desc" data-i18n="form.desc">A question, a note, or a CV request — pick the type and I'll get back to you.</p>
+          </div>
+          <form class="cv-form" data-merged-form="hamid" data-cfg-form-subjects="hamid" novalidate>
+            <input type="hidden" name="access_key" data-cfg-web3forms="hamid" value="">
+            <input type="hidden" name="subject" value="">
+            <input type="checkbox" name="botcheck" class="cv-botcheck" tabindex="-1" autocomplete="off">
+            <div class="form-type" role="group">
+              <button type="button" class="form-type-btn" data-form-type="message" aria-pressed="true" data-i18n="form.type.message">Message</button>
+              <button type="button" class="form-type-btn" data-form-type="cv" aria-pressed="false" data-i18n="form.type.cv">CV Request</button>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="hamid-f-name" data-i18n="form.name">Your name</label>
+              <input class="form-input" id="hamid-f-name" name="name" type="text" required
+                data-i18n-attr="placeholder:form.name.ph">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="hamid-f-email" data-i18n="form.email">Your email</label>
+              <input class="form-input" id="hamid-f-email" name="email" type="email" required
+                data-i18n-attr="placeholder:form.email.ph">
+            </div>
+            <div class="form-group">
+              <label class="form-label form-msg-label" for="hamid-f-msg">Your message</label>
+              <textarea class="form-input form-textarea" id="hamid-f-msg" name="message" rows="4" required></textarea>
+            </div>
+            <div class="form-footer">
+              <button class="btn accent" type="submit">
+                <span class="form-btn-label" data-i18n="form.submit">Send</span>
+              </button>
+              <p class="form-note" data-i18n="form.note">I reply to every message personally.</p>
+            </div>
+            <div class="form-feedback form-success" hidden aria-live="polite">
+              <span data-i18n="form.success">Sent — I'll get back to you shortly.</span>
+            </div>
+            <div class="form-feedback form-error" hidden aria-live="polite">
+              <span data-i18n="form.error">Something went wrong. Please try again.</span>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   </section>

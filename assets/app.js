@@ -91,6 +91,20 @@
     Object.keys(cfg).forEach(function (who) {
       if (cfg[who].blogBase) FEED_BASES[who] = cfg[who].blogBase;
     });
+
+    /* Web3Forms access keys */
+    document.querySelectorAll("[data-cfg-web3forms]").forEach(function (el) {
+      var p = cfg[el.getAttribute("data-cfg-web3forms")];
+      if (p && p.web3CVFormsKey) el.value = p.web3CVFormsKey;
+    });
+
+    /* Merged form: stamp both subject data attrs so the toggle can read them */
+    document.querySelectorAll("[data-cfg-form-subjects]").forEach(function (el) {
+      var p = cfg[el.getAttribute("data-cfg-form-subjects")];
+      if (!p) return;
+      el.setAttribute("data-subject-message", "Contact — " + p.nameEn);
+      el.setAttribute("data-subject-cv",      "CV Request — " + p.nameEn);
+    });
   }
 
   var FEED_BASES = {
@@ -137,6 +151,11 @@
 
     document.querySelectorAll("[data-rss-base]").forEach(function (el) {
       el.href = el.getAttribute("data-rss-base") + "/" + lang + "/rss.xml";
+    });
+
+    /* re-apply dynamic label/placeholder for merged forms */
+    document.querySelectorAll("[data-merged-form]").forEach(function (form) {
+      updateFormType(form, form.getAttribute("data-form-current-type") || "message");
     });
   }
 
@@ -325,6 +344,119 @@
     });
   }
 
+  /* ------------- merged contact / CV form ------------- */
+  function updateFormType(form, type) {
+    var D = (window.I18N || {})[currentLang] || (window.I18N || {}).en || {};
+    var isCV = type === "cv";
+    form.setAttribute("data-form-current-type", type);
+
+    form.querySelectorAll(".form-type-btn").forEach(function (btn) {
+      btn.setAttribute("aria-pressed", btn.getAttribute("data-form-type") === type ? "true" : "false");
+    });
+
+    var subjectInput = form.querySelector("[name=subject]");
+    if (subjectInput) {
+      subjectInput.value = isCV
+        ? (form.getAttribute("data-subject-cv")      || "CV Request")
+        : (form.getAttribute("data-subject-message") || "Contact");
+    }
+
+    var msgLabel = form.querySelector(".form-msg-label");
+    var msgArea  = form.querySelector("[name=message]");
+    if (msgLabel) {
+      msgLabel.textContent = isCV
+        ? (D["form.message.label.cv"]      || "Brief note (optional)")
+        : (D["form.message.label.contact"] || "Your message");
+    }
+    if (msgArea) {
+      msgArea.placeholder = isCV
+        ? (D["form.message.ph.cv"]      || "")
+        : (D["form.message.ph.contact"] || "");
+      if (isCV) msgArea.removeAttribute("required");
+      else      msgArea.setAttribute("required", "");
+    }
+  }
+
+  function initMergedForms() {
+    document.querySelectorAll("[data-merged-form]").forEach(function (form) {
+      updateFormType(form, "message");
+
+      form.querySelectorAll(".form-type-btn").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          updateFormType(form, btn.getAttribute("data-form-type"));
+        });
+      });
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var btn     = form.querySelector("[type=submit]");
+        var label   = btn.querySelector(".form-btn-label") || btn;
+        var success = form.querySelector(".form-success");
+        var errBox  = form.querySelector(".form-error");
+        var prev    = label.textContent;
+
+        success.setAttribute("hidden", "");
+        errBox.setAttribute("hidden", "");
+        btn.disabled      = true;
+        label.textContent = "…";
+
+        var restore = function () { btn.disabled = false; label.textContent = prev; };
+
+        fetch("https://api.web3forms.com/submit", {
+          method:  "POST",
+          headers: { "Accept": "application/json" },
+          body:    new FormData(form)
+        })
+        .then(function (r) { return r.json(); })
+        .then(function (json) {
+          restore();
+          if (json.success) {
+            form.reset();
+            updateFormType(form, "message");
+            success.removeAttribute("hidden");
+          } else {
+            errBox.removeAttribute("hidden");
+          }
+        })
+        .catch(function () { restore(); errBox.removeAttribute("hidden"); });
+      });
+    });
+  }
+
+  /* ------------- CV request form (Web3Forms) ------------- */
+  function initForms() {
+    document.querySelectorAll("[data-cv-form], [data-contact-form]").forEach(function (form) {
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var btn     = form.querySelector("[type=submit]");
+        var label   = btn.querySelector(".form-btn-label") || btn;
+        var success = form.querySelector(".form-success");
+        var errBox  = form.querySelector(".form-error");
+        var prev    = label.textContent;
+
+        success.setAttribute("hidden", "");
+        errBox.setAttribute("hidden", "");
+        btn.disabled    = true;
+        label.textContent = "…";
+
+        var restore = function () { btn.disabled = false; label.textContent = prev; };
+
+        fetch("https://api.web3forms.com/submit", {
+          method:  "POST",
+          headers: { "Accept": "application/json" },
+          body:    new FormData(form)
+        })
+        .then(function (r) { return r.json(); })
+        .then(function (json) {
+          restore();
+          if (json.success) { form.reset(); success.removeAttribute("hidden"); }
+          else              { errBox.removeAttribute("hidden"); }
+        })
+        .catch(function () { restore(); errBox.removeAttribute("hidden"); });
+      });
+    });
+  }
+
   /* ------------- reveal on scroll ------------- */
   function initReveal() {
     if (!("IntersectionObserver" in window)) return;
@@ -357,6 +489,8 @@
     initTheme();
     initLang();   /* calls applyLang → fetchAllFeeds */
     initEmail();
+    initForms();
+    initMergedForms();
     initReveal();
     initSpy();
   });
