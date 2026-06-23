@@ -80,7 +80,7 @@
       var p = cfg[el.getAttribute("data-cfg-blog")];
       if (!p) return;
       el.setAttribute("data-rss-base", p.blogBase);
-      el.href = p.blogBase + "/en/rss.xml";
+      el.href = p.blogBase + "/en/index.xml";
     });
     document.querySelectorAll("[data-cfg-viewall]").forEach(function (el) {
       var p = cfg[el.getAttribute("data-cfg-viewall")];
@@ -150,7 +150,7 @@
     });
 
     document.querySelectorAll("[data-rss-base]").forEach(function (el) {
-      el.href = el.getAttribute("data-rss-base") + "/" + lang + "/rss.xml";
+      el.href = el.getAttribute("data-rss-base") + "/" + lang + "/index.xml";
     });
 
     /* re-apply dynamic label/placeholder for merged forms */
@@ -304,7 +304,7 @@
     var base = FEED_BASES[who];
     if (!base) return;
 
-    var rssUrl = mount.getAttribute("data-rss-" + lang) || (base + "/" + lang + "/rss.xml");
+    var rssUrl = mount.getAttribute("data-rss-" + lang) || (base + "/" + lang + "/index.xml");
     mount.innerHTML = '<span class="feed-msg feed-loading" aria-live="polite" aria-busy="true">Loading…</span>';
 
     fetch(RSS2JSON + encodeURIComponent(rssUrl))
